@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>how to use</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="navig.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script type="application/javascript">
+
+  function resizeIFrameToFitContent( iFrame ) {
+
+      iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+      iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+  }
+
+  window.addEventListener('DOMContentLoaded', function(e) {
+
+      var iFrame = document.getElementById( 'iFrame1' );
+      resizeIFrameToFitContent( iFrame );
+
+      // or, to resize all iframes:
+      var iframes = document.querySelectorAll("iframe");
+      for( var i = 0; i < iframes.length; i++) {
+          resizeIFrameToFitContent( iframes[i] );
+      }
+  } );
+
+  </script>
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3 left-menu">
+      <div class="logo"><i class="fa fa-coffee "></i>
+        <div>VIZ JAVA</div>
+      </div>
+      <div class="accordion">
+        <div class="section">
+          <input type="radio" name="accordion-1" id="section-1" value="toggle"/>
+          <label for="section-1"><span>Intro</span></label>
+          <div class="content">
+            <ul>
+              <li><i class="fa fa-start"></i><span><a href="howtouse.html">Start</a></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="section">
+          <input type="radio" name="accordion-1" id="section-2" value="toggle"/>
+          <label for="section-2"> <span>Primitive and reference types</span></label>
+          <div class="content">
+            <ul>
+              <li><i class="fa fa-start"></i><span><a href="types.html">Start</a></span></li>
+              <li><i class="fa fa-start"></i><span><a href="types.html">Primitive</a></span></li>
+              <li><i class="fa fa-start"></i><span><a href="types.html">Reference</a></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="section">
+          <input type="radio" name="accordion-1" id="section-3" checked="toggle"/>
+          <label for="section-3"> <span>Array</span></label>
+          <div class="content">
+            <ul>
+              <li><i class="fa fa-start"></i><span><a href="arrays.html">Start</a></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="section">
+          <input type="radio" name="accordion-1" id="section-4" value="toggle"/>
+          <label for="section-4"> <span>Recursion</span></label>
+          <div class="content">
+            <ul>
+              <li><i class="fa fa-start"></i><span><a href="recur.html">Start</a></span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 right-content">
+
+	<p>Write a method called chopN that takes an array of Strings called inputArr and an int called chopNum. </p> 
+	<p>The method returns an array where each member of the returned array has chopNum length. </p> 
+	<p>Any String in inputArr that has length < chopNum is not chopped and is included in the returned array.  Assume all Strings in inputArr have length >= 1. <p>
+
+	<p> For example, when this code is executed: <p>
+
+	<p> String[] names = {"Ali", "Zhichao", "Mohit", "Shahrzad", "Aaron", "Celeste", "Bo"}; </p>
+	<p> String[] resultArr = chopN(names, 3); </p>
+
+	<p> The contents of resultArr would be these Strings: "Ali", "Zhi", "Moh", "Sha", "Aar", "Cel", "Bo" </p>
+
+<iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20MyClass%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%20args%5B%5D%29%20%7B%0A%20%20%20%20String%5B%5D%20names%20%3D%20%7B%22Ali%22,%20%22Zhichao%22,%20%22Mohit%22,%20%22Shahrzad%22,%20%22Aaron%22,%20%22Celeste%22,%20%22Bo%22%7D%3B%0A%20%20%20%20String%5B%5D%20resultArr%20%3D%20chopN%28names,%203%29%3B%0A%20%20%20%20%0A%20%20%20%20for%20%28int%20iter%3D0%3B%20iter%20%3C%20resultArr.length%3B%20iter%2B%2B%29%7B%0A%20%20%20%20%20%20%20%20System.out.println%28resultArr%5Biter%5D%29%3B%20%20%20%20%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20//*First%20answer%0A%20%20%20%20public%20static%20String%5B%5D%20chopN%28String%5B%5D%20names,%20int%20N%29%7B%0A%20%20%20%20%20%20%20%20for%20%28int%20iter%3D0%3B%20iter%3C%20names.length%3B%20iter%2B%2B%20%29%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20%28names%5Biter%5D.length%28%29%20%3C%3D%20N%29%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20continue%3B%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20names%5Biter%5D%20%3D%20names%5Biter%5D.substring%280,N%29%3B%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20return%20names%3B%0A%20%20%20%20%7D%0A%20%20%20%20//*/%0A%20%20%20%20%0A%7D%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+<iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20MyClass%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%20args%5B%5D%29%20%7B%0A%20%20%20%20String%5B%5D%20names%20%3D%20%7B%22Ali%22,%20%22Zhichao%22,%20%22Mohit%22,%20%22Shahrzad%22,%20%22Aaron%22,%20%22Celeste%22,%20%22Bo%22%7D%3B%0A%20%20%20%20String%5B%5D%20resultArr%20%3D%20chopN%28names,%203%29%3B%0A%20%20%20%20%0A%20%20%20%20for%20%28int%20iter%3D0%3B%20iter%20%3C%20resultArr.length%3B%20iter%2B%2B%29%7B%0A%20%20%20%20%20%20%20%20System.out.println%28resultArr%5Biter%5D%29%3B%20%20%20%20%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20%7D%0A%20%20%20%20%0A%20%20%20%20//*Second%20answer%0A%20%20%20%20%20public%20static%20String%5B%5D%20chopN%28String%5B%5D%20inputArr,%20int%20chopNum%29%20%7B%0A%20%20%20%20%20%20String%5B%5D%20choppedArray%20%3D%20new%20String%5BinputArr.length%5D%3B%0A%20%20%20%20%20%20for%20%28int%20i%20%3D%200%3B%20i%20%3C%20inputArr.length%3B%20i%2B%2B%29%20%7B%0A%20%20%20%20%20%20%20%20if%20%28inputArr%5Bi%5D.length%28%29%20%3E%20chopNum%29%20%7B%0A%20%20%20%20%20%20%20%20%20%20choppedArray%5Bi%5D%20%3D%20inputArr%5Bi%5D.substring%280,chopNum%29%3B%0A%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20choppedArray%5Bi%5D%20%3D%20inputArr%5Bi%5D%3B%0A%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20return%20choppedArray%3B%0A%20%20%20%20%7D%0A%20%20%20%20//*/%0A%20%20%20%20%0A%7D%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=61&heapPrimitives=false&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+
+
+
+      <p>Great. Now that you know how to use this, let's continue to the next lesson.</p>
+      <p><a href="types.html">next lesson</a></p>      
+    </div>
+  </div>
+</div>
+  
+
+</body>
+</html>
+

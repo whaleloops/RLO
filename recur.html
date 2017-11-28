@@ -38,7 +38,7 @@
       </div>
       <div class="accordion">
         <div class="section">
-          <input type="radio" name="accordion-1" id="section-1" checked="toggle"/>
+          <input type="radio" name="accordion-1" id="section-1" value="toggle"/>
           <label for="section-1"><span>Intro</span></label>
           <div class="content">
             <ul>
@@ -67,7 +67,7 @@
           </div>
         </div>
         <div class="section">
-          <input type="radio" name="accordion-1" id="section-4" value="toggle"/>
+          <input type="radio" name="accordion-1" id="section-4" checked="toggle"/>
           <label for="section-4"> <span>Recursion</span></label>
           <div class="content">
             <ul>
@@ -78,15 +78,9 @@
       </div>
     </div>
     <div class="col-md-9 right-content">
-      <p>For this specific tutorial, we are going to explore some basics of this tool.</p>
-      <p>Take a close look at the interface, you should see that there is a red arrow pointing to "int i = 0;"</p>
-      <p>Let's run the code by clicking "Forward" button below.</p>
-      <p>Now, let's suppose that you already know the ++ operator and want to execute print statement on line 6. Drag the bar towards your right until the red arrow runs past line 6.</p>
-      <p>You should see that "1" is printed out on the right-top.</p>
-      <p>Continue doing this until the red arrow reaches the last line. None the code finish executing.</p>
-      <iframe src="http://pythontutor.com/iframe-embed.html#code=public%20class%20Tutorial0%20%7B%20%20%20%20%0A%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20int%20i%20%3D%200%3B%0A%20%20%20%20%20i%2B%2B%3B%0A%20%20%20%20%20System.out.println%28i%29%3B%0A%20%20%20%20%20%0A%20%20%20%20%20double%20f%20%3D%202.0%3B%0A%20%20%20%20%20f%20%3D%20f%20%2B%202.7%3B%0A%20%20%20%20%20System.out.println%28f%29%3B%0A%20%20%20%20%20%0A%20%20%20%20%20String%20str%20%3D%20%22abc%22%3B%0A%20%20%20%20%20str%20%3D%20str%20%2B%20%22def%22%3B%0A%20%20%20%20%20System.out.println%28str%29%3B%0A%20%20%20%7D%0A%20%20%20%20%0A%7D%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:600px;width:100%;border:none;overflow:hidden;"></iframe>
-      <p>Great. Now that you know how to use this, let's continue to the next lesson.</p>
-      <p><a href="types.html">next lesson</a></p>      
+      <p>Write a recursive method called countA that takes a String parameter and returns an int, which is a count of the number of times the lowercase letter 'a' occurs in a String.</p>
+<iframe width="1200" height="800" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20testRecursion%20%7B%0A%20%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%20%20%20String%20str%20%3D%20%22Happy%20Hal%22%3B%0A%20%20%20%20%20%20int%20result%20%3D%20countA%28str%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20public%20static%20int%20countA%28String%20s%29%20%7B%0A%20%20%20%20%20if%20%28s.length%28%29%20%3D%3D%200%29%20%7B%0A%20%20%20%20%20%20%20return%200%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%20if%20%28s.charAt%280%29%20%3D%3D%20'a'%29%20%7B%0A%20%20%20%20%20%20%20return%201%20%2B%20countA%28s.substring%281%29%29%3B%0A%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20return%20countA%28s.substring%281%29%29%3B%0A%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%0A%7D&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+      <p>Great. Now that you know how to use this, let's continue to the next lesson.</p>     
     </div>
   </div>
 </div>
