@@ -4,16 +4,78 @@
 <head>
   <title>methods and types</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="navig.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script type="application/javascript">
+
+  function resizeIFrameToFitContent( iFrame ) {
+
+      iFrame.width  = iFrame.contentWindow.document.body.scrollWidth;
+      iFrame.height = iFrame.contentWindow.document.body.scrollHeight;
+  }
+
+  window.addEventListener('DOMContentLoaded', function(e) {
+
+      var iFrame = document.getElementById( 'iFrame1' );
+      resizeIFrameToFitContent( iFrame );
+
+      // or, to resize all iframes:
+      var iframes = document.querySelectorAll("iframe");
+      for( var i = 0; i < iframes.length; i++) {
+          resizeIFrameToFitContent( iframes[i] );
+      }
+  } );
+
+  </script>
 </head>
 
 <body>
 
+<body>
 <div class="container">
   <div class="row">
+    <div class="col-md-3 left-menu">
+      <div class="logo"><i class="fa fa-align-justify"></i>
+        <div>Pure CSS Accordion Nav</div>
+      </div>
+      <div class="accordion">
+        <div class="section">
+          <input type="radio" name="accordion-1" id="section-1" value="toggle"/>
+          <label for="section-1"><span>Intro</span></label>
+          <div class="content">
+            <ul>
+              <li><i class="fa fa-start"></i><span><a href="howtouse.html">Start</a></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="section">
+          <input type="radio" name="accordion-1" id="section-2" checked="toggle"/>
+          <label for="section-2"> <span>primitive and reference types</span></label>
+          <div class="content">
+            <ul>
+              <li><i class="fa fa-start"></i><span><a href="types.html">Start</a></span></li>
+              <li><i class="fa fa-start"></i><span><a href="types.html">Primitive</a></span></li>
+              <li><i class="fa fa-start"></i><span><a href="types.html">Reference</a></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="section">
+          <input type="radio" name="accordion-1" id="section-3" value="toggle"/>
+          <label for="section-3"> <span>Section 3</span></label>
+        </div>
+        <div class="section">
+          <input type="radio" name="accordion-1" id="section-4" value="toggle"/>
+          <label for="section-4"> <span>Section 4</span></label>
+          <div class="content"></div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-9 right-content">
+
     <p>For this tutorial, we are going to take a close look on the differences between <strong>primitive</strong> and <strong>reference</strong> types in Java.</p>
     <p>Look at the code below. Before running this, what are the expected output in the console?</p>
-    <p>Now, let's see what is the actual output in the consol. (Use the 'Forward' button or taggle the bard)</p>
-    <iframe width="1200" height="800" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=public%20class%20SwapCircle%20%7B%0A%0A%20%20%20private%20static%20int%20circleCount%20%3D%200%3B%0A%20%20%20%0A%20%20%20private%20double%20radius%3B%0A%20%20%20%0A%20%20%20public%20SwapCircle%28double%20radius%29%20%7B%0A%20%20%20%20%20%20circleCount%2B%2B%3B%0A%20%20%20%20%20%20if%20%28radius%20%3E%200%29%20%7B%0A%20%20%20%20%20%20%20%20%20this.radius%20%3D%20radius%3B%0A%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20this.radius%20%3D%201%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20static%20int%20getCircleCount%28%29%20%7B%0A%20%20%20%20%20%20return%20circleCount%3B%0A%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20double%20getRadius%28%29%20%7B%0A%20%20%20%20%20%20return%20this.radius%3B%0A%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20static%20void%20swapInts%28int%20x,%20int%20y%29%20%7B%0A%20%20%20%20%20%20%20System.out.println%28%22%5CtInside%20swapInts%22%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22%5Ctswapping%20integers%20%22%20%2B%20x%20%2B%20%22%20and%20%22%20%2B%20y%29%3B%0A%20%20%20%20%20%20%20int%20temp%20%3D%20x%3B%0A%20%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20%20y%20%3D%20temp%3B%0A%20%20%20%20%20%20%20System.out.println%28%22%5Ctfinished%20swapping%20%22%20%2B%20x%20%2B%20%22%20and%20%22%20%2B%20y%29%3B%0A%20%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20static%20void%20swapCircles%28SwapCircle%20c1,%20SwapCircle%20c2%29%20%7B%0A%20%20%20%20%20%20%20System.out.println%28%22%5CtInside%20swapCircles%22%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22%5Ctswapping%20circles%20%22%20%2B%20c1%20%2B%20%22%20and%20%22%20%2B%20c2%29%3B%0A%20%20%20%20%20%20%20double%20r%20%3D%20c1.radius%3B%0A%20%20%20%20%20%20%20c1.radius%20%3D%20c2.radius%3B%0A%20%20%20%20%20%20%20c2.radius%20%3D%20r%3B%0A%20%20%20%20%20%20%20System.out.println%28%22%5Ctfinished%20swapping%20%22%20%2B%20c1%20%2B%20%22%20and%20%22%20%2B%20c2%29%3B%0A%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20String.format%28%22Circle%28%25.0f%29%22,%20this.radius%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%0A%20%20%20%20//%20first%20try%20swapping%20integers%0A%20%20%20int%20a%20%3D%207,%20b%20%3D%204%3B%0A%20%20%20System.out.println%28%22BEFORE%20swap%3A%22%29%3B%0A%20%20%20System.out.println%28%22a%20%3D%20%22%20%2B%20a%29%3B%0A%20%20%20System.out.println%28%22b%20%3D%20%22%20%2B%20b%29%3B%0A%20%20%20SwapCircle.swapInts%28a,%20b%29%3B%0A%20%20%20System.out.println%28%22AFTER%20swap%3A%22%29%3B%0A%20%20%20System.out.println%28%22a%20%3D%20%22%20%2B%20a%29%3B%0A%20%20%20System.out.println%28%22b%20%3D%20%22%20%2B%20b%29%3B%0A%20%20%20System.out.println%28%29%3B%0A%20%20%20%0A%20%20%20%7D%0A%20%20%20%20%0A%7D%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false"> </iframe>
+    <p>Now, let's see what is the actual output in the console. (Use the 'Forward' button or taggle the bard)</p>
+    <iframe src="http://pythontutor.com/iframe-embed.html#code=public%20class%20SwapCircle%20%7B%0A%0A%20%20%20private%20static%20int%20circleCount%20%3D%200%3B%0A%20%20%20%0A%20%20%20private%20double%20radius%3B%0A%20%20%20%0A%20%20%20public%20SwapCircle%28double%20radius%29%20%7B%0A%20%20%20%20%20%20circleCount%2B%2B%3B%0A%20%20%20%20%20%20if%20%28radius%20%3E%200%29%20%7B%0A%20%20%20%20%20%20%20%20%20this.radius%20%3D%20radius%3B%0A%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20this.radius%20%3D%201%3B%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20static%20int%20getCircleCount%28%29%20%7B%0A%20%20%20%20%20%20return%20circleCount%3B%0A%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20double%20getRadius%28%29%20%7B%0A%20%20%20%20%20%20return%20this.radius%3B%0A%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20static%20void%20swapInts%28int%20x,%20int%20y%29%20%7B%0A%20%20%20%20%20%20%20System.out.println%28%22%5CtInside%20swapInts%22%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22%5Ctswapping%20integers%20%22%20%2B%20x%20%2B%20%22%20and%20%22%20%2B%20y%29%3B%0A%20%20%20%20%20%20%20int%20temp%20%3D%20x%3B%0A%20%20%20%20%20%20%20x%20%3D%20y%3B%0A%20%20%20%20%20%20%20y%20%3D%20temp%3B%0A%20%20%20%20%20%20%20System.out.println%28%22%5Ctfinished%20swapping%20%22%20%2B%20x%20%2B%20%22%20and%20%22%20%2B%20y%29%3B%0A%20%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20static%20void%20swapCircles%28SwapCircle%20c1,%20SwapCircle%20c2%29%20%7B%0A%20%20%20%20%20%20%20System.out.println%28%22%5CtInside%20swapCircles%22%29%3B%0A%20%20%20%20%20%20%20System.out.println%28%22%5Ctswapping%20circles%20%22%20%2B%20c1%20%2B%20%22%20and%20%22%20%2B%20c2%29%3B%0A%20%20%20%20%20%20%20double%20r%20%3D%20c1.radius%3B%0A%20%20%20%20%20%20%20c1.radius%20%3D%20c2.radius%3B%0A%20%20%20%20%20%20%20c2.radius%20%3D%20r%3B%0A%20%20%20%20%20%20%20System.out.println%28%22%5Ctfinished%20swapping%20%22%20%2B%20c1%20%2B%20%22%20and%20%22%20%2B%20c2%29%3B%0A%20%20%20%7D%0A%20%20%20%0A%20%20%20public%20String%20toString%28%29%20%7B%0A%20%20%20%20return%20String.format%28%22Circle%28%25.0f%29%22,%20this.radius%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20%0A%0A%20%20%20public%20static%20void%20main%28String%5B%5D%20args%29%20%7B%0A%20%20%20%0A%20%20%20%20//%20first%20try%20swapping%20integers%0A%20%20%20int%20a%20%3D%207,%20b%20%3D%204%3B%0A%20%20%20System.out.println%28%22BEFORE%20swap%3A%22%29%3B%0A%20%20%20System.out.println%28%22a%20%3D%20%22%20%2B%20a%29%3B%0A%20%20%20System.out.println%28%22b%20%3D%20%22%20%2B%20b%29%3B%0A%20%20%20SwapCircle.swapInts%28a,%20b%29%3B%0A%20%20%20System.out.println%28%22AFTER%20swap%3A%22%29%3B%0A%20%20%20System.out.println%28%22a%20%3D%20%22%20%2B%20a%29%3B%0A%20%20%20System.out.println%28%22b%20%3D%20%22%20%2B%20b%29%3B%0A%20%20%20System.out.println%28%29%3B%0A%20%20%20%0A%20%20%20%7D%0A%20%20%20%20%0A%7D%0A&codeDivHeight=400&codeDivWidth=350&cumulative=false&curInstr=0&heapPrimitives=false&origin=opt-frontend.js&py=java&rawInputLstJSON=%5B%5D&textReferences=false" onload='javascript:(function(o){o.style.height=o.contentWindow.document.body.scrollHeight+"px";}(this));' style="height:600px;width:800px;border:none;overflow:hidden;"></iframe>
     <p/>
 
     <p>Look at the code below. Before running this, what are the expected printouts in the console?<p/>
@@ -23,8 +85,12 @@
     <p>Why do you think, they performnce differently?<p/>
     <p>What can you conclude with the aspect of primitive and reference type?<p/>
 
+    </div>
   </div>
 </div>
+  
+
+</body>
 
 </body>
 </html>
